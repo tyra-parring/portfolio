@@ -57,7 +57,6 @@
       </div>
     </div>
 
-    <!-- Interests and Hobbies Section -->
     <div class="hobbies-section">
       <h2>Interests & Hobbies</h2>
       <p>

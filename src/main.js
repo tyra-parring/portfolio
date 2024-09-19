@@ -6,4 +6,7 @@ import store from './store'
 import 'animate.css/animate.css';
 import 'devicon/devicon.min.css';
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App)
+.use(store)
+.use(router)
+.mount('#app')
