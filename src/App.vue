@@ -7,6 +7,9 @@
     <section id="about">
       <AboutComp/>
     </section>
+    <section id="education">
+      <EducationComp/>
+    </section>
     <section id="projects">
       <ProjectsComp/>
     </section>
@@ -21,15 +24,18 @@
 import NavbarComp from './components/NavbarComp.vue';
 import HomeComp from './views/HomeComp.vue';
 import AboutComp from './views/AboutComp.vue';
+import EducationComp from './views/EducationComp.vue';
 import ProjectsComp from './views/ProjectsComp.vue';
 import ContactComp from './views/ContactComp.vue';
 import FooterComp from './components/FooterComp.vue';
+import 'devicon/devicon.min.css';
 
 export default {
   components: {
     NavbarComp,
     HomeComp,
     AboutComp,
+    EducationComp,
     ProjectsComp,
     ContactComp,
     FooterComp
@@ -57,16 +63,54 @@ p, li, input, textarea, button {
   font-family: 'Garamond Premier Pro', serif; 
 }
 
+p {
+  line-height: 1.5;
+}
+
 section {
-  padding: 100px 20px;
+  padding: 20px;
   min-height: 100vh;
+  /* margin-top: 1.8rem; */
 }
 
 #home {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   background-color: #000;
   color: #fff;
 }
+
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#education {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: #000000;
+  color: #fff;
+}
+
+#projects {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: #ffffff;
+  color: #fff;
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #fff;
+}
+
 </style>
