@@ -1,6 +1,31 @@
 <template>
   <div class="contact animate__animated animate__fadeIn">
     <h1>Contact Me</h1>
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Address: {{ address1 }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>Email: {{ email1 }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <p>Phone: {{ phoneNumber }}</p>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe
+        width="100%"
+        height="300"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?q={{ address }}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      ></iframe>
+    </div>
     <form @submit.prevent="handleSubmit">
       <input type="text" name="name" v-model="name" placeholder="Your Name" required />
       <input type="email" name="email" v-model="email" placeholder="Your Email" required />
@@ -15,16 +40,18 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   data() {
     return {
       name: '',
-      email: '',
+      email1: 'parringt@gmail.com',
       message: '',
       showAlert: false,
-      alertMessage: '',
+      alertMessage: 'Thank You, Your Email Has Been Sent!',
+      address1: 'Jakkelsvlei Avenue, Bonteheuwel, 7764',
+      phoneNumber: '072 813 0093',
     };
   },
   methods: {
@@ -55,6 +82,29 @@ export default {
 <style scoped>
 .contact {
   text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-item i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.info-item p {
+  margin: 0;
+}
+
+.map-container {
+  margin-bottom: 20px;
 }
 
 form {
@@ -112,5 +162,29 @@ button:hover {
 .alert button:hover {
   background-color: #9CA986;
 }
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 20px;
+}
+
+.contact-info, form {
+  grid-column: 1;
+}
+
+.map-container {
+  grid-column: 2;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+  .map-container {
+    grid-column: 1;
+  }
+}
+
 </style>
   

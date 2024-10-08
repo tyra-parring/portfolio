@@ -86,7 +86,7 @@
     font-weight: lighter;
     color: #fff;
     margin-bottom: 20px;
-    overflow: hidden; /* Add this line */
+    overflow: hidden; 
     white-space: nowrap; 
     border-right: 2px solid #fff;
   }

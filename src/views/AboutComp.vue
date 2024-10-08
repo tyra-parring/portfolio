@@ -1,5 +1,5 @@
 <template>
-  <div class="about-container animate__animated animate__fadeInUp">
+  <div class="about-container" :class="{ 'animate__animated animate__fadeInUp': isVisible }">
     <div class="intro-section">
       <div class="profile-pic">
         <img src="https://tyra-parring.github.io/homehost-/InShot_20240424_205858533.jpg" alt="Tyra Parring Professional Picture" />
@@ -32,27 +32,27 @@
       <div class="soft-skills">
         <div class="soft-skill-item">
           <i class="fas fa-comments" title="Communication"></i>
-          <p>Communication</p>
+          <p>Effective Communication</p>
         </div>
         <div class="soft-skill-item">
           <i class="fas fa-users" title="Teamwork"></i>
-          <p>Teamwork</p>
+          <p>Collaborative Teamwork</p>
         </div>
         <div class="soft-skill-item">
           <i class="fas fa-lightbulb" title="Problem Solving"></i>
-          <p>Problem Solving</p>
+          <p>Creative Problem Solving</p>
         </div>
         <div class="soft-skill-item">
           <i class="fas fa-sync-alt" title="Adaptability"></i>
-          <p>Adaptability</p>
+          <p>Adaptable and Agile</p>
         </div>
         <div class="soft-skill-item">
           <i class="fas fa-clock" title="Time Management"></i>
-          <p>Time Management</p>
+          <p>Efficient Time Management</p>
         </div>
         <div class="soft-skill-item">
           <i class="fas fa-microphone" title="Public Speaking"></i>
-          <p>Public Speaking</p>
+          <p>Confident Public Speaking</p>
         </div>
       </div>
     </div>
@@ -69,20 +69,29 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isVisible: false, 
+    };
+  },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll); 
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll); 
   },
   methods: {
     handleScroll() {
-      const aboutSection = this.$el;
+      const aboutSection = this.$el; 
       const scrollPosition = window.scrollY + window.innerHeight;
       if (scrollPosition > aboutSection.offsetTop + aboutSection.clientHeight / 2) {
-        aboutSection.classList.add('animate__fadeInUp');
+        this.isVisible = true;
       }
     },
   },
 };
 </script>
+
 
 <style scoped>
 .about-container {
@@ -92,6 +101,12 @@ export default {
   padding: 40px;
   max-width: 800px;
   margin: 0 auto;
+  opacity: 0; 
+  transition: opacity 0.6s ease-out;
+}
+
+.about-container.animate__fadeInUp {
+  opacity: 1; 
 }
 
 .intro-section {
@@ -285,5 +300,3 @@ export default {
   line-height: 1.6;
 }
 </style>
-
-  
