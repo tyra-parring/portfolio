@@ -62,21 +62,21 @@ ul {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping of the cards */
+  flex-wrap: wrap; 
   justify-content: center;
 }
 
 li {
   margin: 10px;
-  width: 100%; /* Full width by default */
+  width: 100%; 
   display: flex;
   justify-content: center;
 }
 
 .card {
   width: 420px;
-  max-width: 500px; /* Set a max width for large screens */
-  height: 280px; /* Adjust height as needed */
+  max-width: 500px; 
+  height: 280px; 
   perspective: 1000px;
   transition: z-index 0.5s;
   margin-top: 2em;
@@ -127,20 +127,19 @@ li {
   transform: rotateY(180deg);
 }
 
-/* Responsive adjustments */
 @media (min-width: 768px) {
   li {
-    flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets and larger screens */
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 767px) {
   li {
-    flex: 1 1 100%; /* 1 card per row on mobile screens */
+    flex: 1 1 100%;
   }
 
   .card {
-    max-width: 100%; /* Full width on mobile */
+    max-width: 100%;
     height: 220px;
   }
 }

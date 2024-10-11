@@ -70,7 +70,7 @@ p {
 section {
   padding: 20px;
   min-height: 100vh;
-  /* margin-top: 1.8rem; */
+  margin-top: 1.8rem;
 }
 
 #home {
@@ -100,7 +100,7 @@ section {
 #projects {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   background-color: #ffffff;
   color: #fff;
 }

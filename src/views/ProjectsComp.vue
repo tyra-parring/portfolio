@@ -249,20 +249,19 @@ export default {
 
 @media (max-width: 768px) {
   .button {
-    padding: 8px 16px; /* Reduce button padding for tablets */
+    padding: 8px 16px; 
   }
 }
 
-/* For mobile screens */
 @media (max-width: 425px) {
   .button-container {
-    flex-direction: column; /* Stacks the buttons vertically */
+    flex-direction: column;
   }
 
   .button {
-    width: 100%; /* Makes buttons full width on mobile */
-    margin-bottom: 10px; /* Adds space between stacked buttons */
-    padding: 8px 12px; /* Adjusts padding for a better touch experience */
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px 12px; 
     font-size: 0.8em
   }
 }
