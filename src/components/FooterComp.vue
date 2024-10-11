@@ -50,9 +50,12 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    text-align: center;
   }
   
   .footer-brand {
+    display: flex;
+    justify-content: center;
     font-size: .9rem;
     letter-spacing: 3px;
     margin-bottom: 20px;

@@ -24,6 +24,7 @@
         <i class="devicon-figma-plain colored" title="Figma"></i>
         <i class="devicon-mysql-plain colored" title="MySQL"></i>
         <i class="devicon-git-plain colored" title="Git"></i>
+        <i class="devicon-bootstrap-plain colored" title="Bootstrap"></i>
       </div>
     </div>
 
@@ -58,12 +59,20 @@
     </div>
 
     <div class="hobbies-section">
-      <h2>Interests & Hobbies</h2>
-      <p>
-        Beyond coding, I enjoy exploring the latest tech trends, indulging in creative writing, and experimenting with digital art.
-        I also love spending time outdoors and taking care of my playful cat!
-      </p>
-    </div>
+  <h2>Interests & Hobbies</h2>
+  <p>
+    Beyond coding, I'm a curious soul who loves to explore the latest tech trends, from AI and machine learning to cybersecurity and data science. I'm always on the lookout for new tools and technologies to add to my skillset.
+  </p>
+  <p>
+    When I'm not coding, you can find me indulging in creative writing, whether it's writing short stories, poetry, or even scripting for video games. I find that writing helps me to express myself in a different way and tap into my imagination.
+  </p>
+  <p>
+    But it's not all about tech and creativity - I'm also an outdoor enthusiast who loves spending time in nature. Whether it's going for a hike, playing sports, or simply taking a walk around the block, I believe that being outdoors is essential for both physical and mental well-being.
+  </p>
+  <p>
+    And finally, I'm a proud cat mom who loves spending time with my playful and mischievous feline friend. From cuddling on the couch to playing with toys, I adore the companionship and joy that my cat brings to my life.
+  </p>
+</div>
   </div>
 </template>
 

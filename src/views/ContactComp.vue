@@ -23,7 +23,7 @@
         scrolling="no"
         marginheight="0"
         marginwidth="0"
-        src="https://maps.google.com/maps?q={{ address }}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q={{ address1 }}&t=&z=15&ie=UTF8&iwloc=&output=embed"
       ></iframe>
     </div>
     <form @submit.prevent="handleSubmit">
@@ -50,7 +50,7 @@ export default {
       message: '',
       showAlert: false,
       alertMessage: 'Thank You, Your Email Has Been Sent!',
-      address1: 'Jakkelsvlei Avenue, Bonteheuwel, 7764',
+      address1: 'Bonteheuwel, 7764',
       phoneNumber: '072 813 0093',
     };
   },

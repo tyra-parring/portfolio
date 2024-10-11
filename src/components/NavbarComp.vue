@@ -165,6 +165,26 @@ export default {
     margin-right: 1.2em;
   }
 }
+
+@media (max-width: 475px) {
+  .navbar-links {
+    flex-direction: column;
+  }
+  .navbar-links ul {
+    gap: 11px;
+    margin-right: 2.1em;
+  }
+  .navbar-links a {
+    font-size: 0.95rem;
+  }
+  /* .container {
+    padding: 8px;
+  } */
+  .brand {
+    font-size: 1.5rem;
+    margin-right: 1em;
+  }
+}
 </style>
 
   

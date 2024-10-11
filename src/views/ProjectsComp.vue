@@ -25,13 +25,6 @@
 export default {
   data() {
     return {
-        name: '',
-      email: 'parringt@gmail.com',
-      message: '',
-      showAlert: false,
-      alertMessage: 'Thank You, Your Email Has Been Sent!',
-      address: 'Bonteheuwel, 7764',
-      phoneNumber: '072 813 0093',
       projects: [
         {
   "name": "Calculator",
@@ -74,6 +67,13 @@ export default {
   "vercel": "https://interestamount-gamma.vercel.app/",
   "description": "A simple interest calculator built using HTML, CSS, and JavaScript",
   "image": "https://tyra-parring.github.io/host-/image/interestamount.png"
+  },
+  {
+  "name": "Node.js E-Commerce Collaboration",
+  "github": "https://github.com/SimanyeSTS/AuraArtistry-Project",
+  "vercel": "https://vuejs-frontend-e2fc1.web.app/",
+  "description": "Collaborated with a partner on a fullstack project using Node.js, Vue.js and MySQL to develop a fully functional e-commerce website for makeup products.",
+  "image": "https://tyra-parring.github.io/homehost-/aura.jpg"
   } 
       ]
     };
@@ -144,8 +144,8 @@ export default {
 }
 
 .project-card {
-  flex: 1 1 calc(33.333% - 40px); 
-  max-width: calc(33.333% - 40px);
+  flex: 1 1 calc(50% - 20px); 
+  max-width: calc(50% - 20px);
   position: relative;
   width: 300px;
   height: 460px;
@@ -153,7 +153,22 @@ export default {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  background: rgba(255, 255, 255, 0.8); 
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* @media (max-width: 768px) {
+  .project-card {
+    flex: 1 1 calc(50% - 20px); 
+    max-width: calc(50% - 20px);
+  }
+} */
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .project-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 .project-card:hover {
@@ -211,6 +226,7 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  gap: 10px; 
 }
 
 .button {
@@ -222,10 +238,32 @@ export default {
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  flex: 1; 
+  text-align: center; 
 }
 
 .button:hover {
   background-color: #ffffff;
   color: black;
 } 
+
+@media (max-width: 768px) {
+  .button {
+    padding: 8px 16px; /* Reduce button padding for tablets */
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 425px) {
+  .button-container {
+    flex-direction: column; /* Stacks the buttons vertically */
+  }
+
+  .button {
+    width: 100%; /* Makes buttons full width on mobile */
+    margin-bottom: 10px; /* Adds space between stacked buttons */
+    padding: 8px 12px; /* Adjusts padding for a better touch experience */
+    font-size: 0.8em
+  }
+}
 </style>
