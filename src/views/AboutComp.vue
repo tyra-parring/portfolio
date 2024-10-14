@@ -118,6 +118,13 @@ export default {
   opacity: 1; 
 }
 
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: 50% 25%; 
+}
+
 .intro-section {
   display: flex;
   flex-direction: column;

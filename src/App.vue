@@ -67,6 +67,14 @@ p {
   line-height: 1.5;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
 section {
   padding: 20px;
   min-height: 100vh;

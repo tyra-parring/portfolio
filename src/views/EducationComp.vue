@@ -5,7 +5,8 @@
       <li v-for="(education, index) in educations" :key="index">
         <div class="card">
           <div class="card-inner">
-            <div class="card-front">
+            <div class="card-front" :style="{ backgroundImage: `url(${education.image})` }">
+              <div class="image-overlay"></div>
               <h2>{{ education.institution }}</h2>
             </div>
             <div class="card-back">
@@ -28,17 +29,20 @@ export default {
         {
           "yearRange": "2019 - 2022",
           "institution": "Bonteheuwel High School",
-          "description": "Completed my schooling career at Bonteheuwel High School."
+          "description": "Completed my schooling career at Bonteheuwel High School.",
+          "image": "https://tyra-parring.github.io/homehost-/Bonteheuwel_High_School_logo.png"
         },
         {
           "yearRange": "2021",
           "institution": "Amy Biehl Foundation",
-          "description": "Completed a Reading and Writing Tutoring Workshop under the Amy Biehl Foundation."
+          "description": "Completed a Reading and Writing Tutoring Workshop under the Amy Biehl Foundation.",
+          "image": "https://tyra-parring.github.io/homehost-/amybiehl.jpg"
         },
         {
           "yearRange": "2024 - 2025",
           "institution": "Coding Bootcamp",
-          "description": "Joined a Coding Bootcamp program that provided the fundamentals of Web Development, including learning coding languages such as HTML, CSS, JavaScript, and more. The program also focused on interpersonal and self-development skills to aid personal growth both in life and the work environment."
+          "description": "Joined a Coding Bootcamp program that provided the fundamentals of Web Development, including learning coding languages such as HTML, CSS, JavaScript, and more. The program also focused on interpersonal and self-development skills to aid personal growth both in life and the work environment.",
+          "image": "https://tyra-parring.github.io/homehost-/lifechoices.png"
         }
       ]
     };
@@ -106,13 +110,26 @@ li {
 
 .card-front {
   background-color: #ffffff;
-  color: #000000;
   display: flex;
   align-items: center;
   border-radius: 10px;
   justify-content: center;
   font-size: 22px;
   transform: rotateY(0deg);
+  background-size: cover;
+  background-position: center;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) contrast(1.5);
+  background-image: inherit;
 }
 
 .card-back {
@@ -140,7 +157,9 @@ li {
 
   .card {
     max-width: 100%;
+    width: 269px; 
     height: 220px;
+    margin: 10px auto; 
   }
 }
 </style>

@@ -1,10 +1,5 @@
 <template>
   <div class="home-page">
-    <div class="background">
-      <video autoplay muted loop>
-        <source src="luxury-background-video.mp4" type="video/mp4">
-      </video>
-    </div>
     <div class="content">
       <div class="typewriter-container">
         <div class="typewriter" id="typewriter"></div>
@@ -59,21 +54,6 @@ export default {
   overflow: hidden;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -111,33 +91,33 @@ export default {
   margin-bottom: 30px;
 }
 
-.button {
-  background-color: #333 !important;
-  color: #fff !important;
-  border: none !important;
-  padding: 10px 20px !important;
-  font-size: 18px !important;
-  cursor: pointer !important;
+.home-page .button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
   transition: 0.6s ease-in-out;
 }
 
-.button:hover {
-  background-color: #9CA986 !important;
+.home-page .button:hover {
+  background-color: #9CA986;
 }
 
-.social-links {
+.home-page .social-links {
   margin-top: 20px;
 }
 
-.social-links a {
+.home-page .social-links a {
   margin: 0 10px;
   color: #fff;
   font-size: 24px;
   transition: color 0.2s ease;
 }
 
-.social-links a:hover {
-  color: #9CA986 !important;
+.home-page .social-links a:hover {
+  color: #9CA986;
 }
 
 @media only screen and (min-width: 1200px) {

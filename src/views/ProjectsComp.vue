@@ -87,20 +87,6 @@ export default {
   margin: 0px;
 }
 
-/* .page-background {
-  position: relative;
-  background-image: url('https://tyra-parring.github.io/host-/image/beautiful-tropical-leaves-white-background-poster-banner-postcard-template.jpg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-} */
-
 .overlay {
   position: absolute;
   top: 0;
@@ -263,6 +249,35 @@ export default {
     margin-bottom: 10px;
     padding: 8px 12px; 
     font-size: 0.8em
+  }
+}
+
+@media (min-width: 1440px) {
+  .projects-view {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+  }
+
+  .page-heading {
+    font-size: 2.5em;
+  }
+
+  .card-content {
+    font-size: 1.2em;
+  }
+
+  .card-content h3 {
+    font-size: 1.4em;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 1em;
   }
 }
 </style>
