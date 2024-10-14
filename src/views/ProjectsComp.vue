@@ -252,6 +252,30 @@ export default {
   }
 }
 
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 1 1 calc(50% - 20px); 
+    max-width: calc(50% - 20px);
+  }
+
+  .page-heading {
+    font-size: 2.2em;
+  }
+
+  .card-content {
+    font-size: 1.1em;
+  }
+
+  .card-content h3 {
+    font-size: 1.2em;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
+
 @media (min-width: 1440px) {
   .projects-view {
     max-width: 1200px;
