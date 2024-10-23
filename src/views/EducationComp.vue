@@ -10,7 +10,7 @@
               <h2>{{ education.institution }}</h2>
             </div>
             <div class="card-back">
-              <p>{{ education.yearRange }}</p>
+              <!-- <p>{{ education.yearRange }}</p> -->
               <!-- <p v-else>{{ education.year }}</p> -->
               <p>{{ education.description }}</p>
             </div>
@@ -18,7 +18,27 @@
         </div>
       </li>
     </ul>
+
+    <div class="certificates-section">
+      <h2>Badges</h2>
+      <div class="badges-container">
+        <div v-for="(badge, index) in badges" :key="index" class="badge">
+          <img :src="badge.image" alt="Badge" />
+          <h3>{{ badge.title }}</h3> <!-- Display badge title if needed -->
+        </div>
+      </div>
+    </div>
+
+    <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <h2>{{ selectedCertificate.title }}</h2>
+        <img :src="selectedCertificate.image" alt="Certificate"/>
+        <button @click="closeModal">Close</button>
+      </div>
+    </div>
   </div>
+
+
 </template>
 
 <script>
@@ -42,10 +62,33 @@ export default {
           "yearRange": "2024 - 2025",
           "institution": "Coding Bootcamp",
           "description": "Joined a Coding Bootcamp program that provided the fundamentals of Web Development, including learning coding languages such as HTML, CSS, JavaScript, and more. The program also focused on interpersonal and self-development skills to aid personal growth both in life and the work environment.",
-          "image": "https://tyra-parring.github.io/homehost-/lifechoices.png"
+          "image": "https://tyra-parring.github.io/homehost-/newlifechoices.jpg"
         }
-      ]
+      ],
+      badges: [
+        {
+          title: "Linux Badge",
+          image: "https://tyra-parring.github.io/homehost-/linux2.png"
+        },
+        {
+          title: "Operating Systems Badge",
+          image: "https://tyra-parring.github.io/homehost-/operatingsystems.png"
+        },
+        // Add more certificates as needed
+      ],
+      isModalOpen: false,
+      selectedCertificate: {}
     };
+  },
+  methods: {
+    openModal(certificate) {
+      this.selectedCertificate = certificate;
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      this.isModalOpen = false;
+      this.selectedCertificate = {};
+    }
   }
 }
 </script>
@@ -79,7 +122,7 @@ li {
 
 .card {
   width: 420px;
-  max-width: 500px; 
+  /* max-width: 500px;  */
   height: 280px; 
   perspective: 1000px;
   transition: z-index 0.5s;
@@ -112,7 +155,7 @@ li {
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   justify-content: center;
   font-size: 22px;
   transform: rotateY(0deg);
@@ -137,11 +180,56 @@ li {
   color: #fff;
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   justify-content: center;
   font-size: 22px;
   padding: 1em;
   transform: rotateY(180deg);
+}
+
+.certificates-section {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badge {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.badge img {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
 }
 
 @media (min-width: 768px) {

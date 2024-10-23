@@ -46,6 +46,29 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Prata&display=swap');
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000; 
+  border-radius: 6px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555; 
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #000000 #ffffff; 
+}
+
 body {
   font-family: 'Prata', serif;
   margin: 0;

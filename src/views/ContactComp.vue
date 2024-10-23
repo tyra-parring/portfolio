@@ -1,51 +1,64 @@
 <template>
   <div class="contact">
     <h1 class="heading">Get in Touch</h1>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="info-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <p>Address: {{ address1 }}</p>
-        </div>
-        <div class="info-item">
-          <i class="fas fa-envelope"></i>
-          <p>Email: {{ email1 }}</p>
-        </div>
-        <div class="info-item">
-          <i class="fas fa-phone"></i>
-          <p>Phone: {{ phoneNumber }}</p>
-        </div>
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Address: {{ address1 }}</p>
       </div>
-      <div class="map-container">
-        <iframe
-          width="100%"
-          height="300"
-          frameborder="0"
-          scrolling="no"
-          marginheight="0"
-          marginwidth="0"
-          src="https://maps.google.com/maps?q={{ address1 }}&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        ></iframe>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>Email: {{ email1 }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <p>Phone: {{ phoneNumber }}</p>
       </div>
     </div>
-    <form @submit.prevent="handleSubmit">
+
+    <form @submit.prevent="handleSubmit" class="contact-form">
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="name" placeholder="Your Name" required />
       <span v-if="errors.name" class="error">{{ errors.name }}</span>
+
       <label for="email">Email:</label>
       <input type="email" id="email" v-model="email" placeholder="Your Email" required />
       <span v-if="errors.email" class="error">{{ errors.email }}</span>
+
       <label for="message">Message:</label>
       <textarea id="message" v-model="message" placeholder="Your Message" required></textarea>
       <span v-if="errors.message" class="error">{{ errors.message }}</span>
+
       <button type="submit">Submit</button>
       <div v-if="loading" class="loading">Loading...</div>
     </form>
+
     <div v-if="showAlert" :class="{'alert': true, 'success': alertMessage === successMessage, 'error': alertMessage === errorMessage}">
-  {{ alertMessage }}
-  <button @click="showAlert = false">OK</button>
+      {{ alertMessage }}
+      <button @click="showAlert = false">OK</button>
+    </div>
+
+    <div class="cv-button">
+  <a href="https://drive.google.com/file/d/1OprEJQERh7GrjafVix3pSxDo5Av-HXkq/view?usp=sharing" target="_blank">
+    <button>
+      <span>View My CV</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 74 74"
+        height="34"
+        width="34"
+      >
+        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+        <path
+          fill="black"
+          d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+        ></path>
+      </svg>
+    </button>
+  </a>
 </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -113,8 +126,16 @@ export default {
 </script>
 
 <style scoped>
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
 .contact {
   text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
 }
 
 .contact-info {
@@ -136,10 +157,6 @@ export default {
   margin: 0;
 }
 
-.map-container {
-  margin-bottom: 20px;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -156,16 +173,32 @@ input, textarea {
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
   cursor: pointer;
-  transition: 0.6s ease-in-out;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  /* border-radius: 100px; */
+  background: #9CA986;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin-top: 0.6em;
 }
 
 button:hover {
-  background-color: #9CA986;
+  background-color: #ffffff;
+  color: black;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 .alert {
@@ -209,16 +242,12 @@ button:hover {
 
 .contact {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  /* grid-template-columns: 1fr 200px; */
   gap: 20px;
 }
 
 .contact-info, form {
   grid-column: 1;
-}
-
-.map-container {
-  grid-column: 2;
 }
 
 .error {
@@ -230,9 +259,6 @@ button:hover {
 @media (max-width: 768px) {
   .contact {
     grid-template-columns: 1fr;
-  }
-  .map-container {
-    grid-column: 1;
   }
 }
 

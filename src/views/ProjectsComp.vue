@@ -134,9 +134,10 @@ export default {
   max-width: calc(50% - 20px);
   position: relative;
   width: 300px;
-  height: 460px;
+  min-height: 460px;
+  height: auto;
   overflow: hidden;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   background: rgba(255, 255, 255, 0.8);
@@ -166,7 +167,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 200px;
   z-index: -1;
 }
 

@@ -5,12 +5,6 @@
         <div class="typewriter" id="typewriter"></div>
       </div>
       <p class="subtitle">As an aspiring web developer, I'm passionate about crafting innovative digital solutions that bring ideas to life. With a strong foundation in HTML, CSS, and JavaScript, I'm constantly learning and exploring new technologies to stay ahead of the curve. Take a look at my projects and let's connect!</p>
-      <button class="button">Take A Look At My Work!</button>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/tyra-parring/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/tyra-parring" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.facebook.com/tyraparring/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      </div>
     </div>
   </div>
 </template>
