@@ -1,9 +1,9 @@
 <template>
     <div class="page-background">
-      <div class="overlay"></div>
       <h1 class="page-heading">Explore My Featured Projects:</h1>
       <div class="projects-view">
-        <div class="project-card" v-for="project in projects" :key="project.name" data-aos="fade-up" data-aos-duration="1000">
+        <div class="project-card" v-for="project in projects" :key="project.name" data-aos="fade-up" 
+        data-aos-duration="500">
           <div class="card-background">
             <img :src="project.image" alt="Project Image" class="background-img">
           </div>
@@ -22,6 +22,9 @@
   </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default {
   data() {
     return {
@@ -77,6 +80,11 @@ export default {
   } 
       ]
     };
+  },
+  mounted() {
+    AOS.init({
+      duration: 600,
+    });
   }
 };
 </script>
@@ -137,7 +145,7 @@ export default {
   min-height: 460px;
   height: auto;
   overflow: hidden;
-  /* border-radius: 10px; */
+  border-radius: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   background: rgba(255, 255, 255, 0.8);

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
     "axios": "^1.7.7",
     "core-js": "^3.8.3",
     "devicon": "^2.16.0",

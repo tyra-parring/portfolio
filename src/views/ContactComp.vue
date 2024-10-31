@@ -1,22 +1,22 @@
 <template>
   <div class="contact">
-    <h1 class="heading">Get in Touch</h1>
+    <h1 class="heading" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Get in Touch</h1>
     <div class="contact-info">
-      <div class="info-item">
+      <div class="info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
         <i class="fas fa-map-marker-alt"></i>
         <p>Address: {{ address1 }}</p>
       </div>
-      <div class="info-item">
+      <div class="info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
         <i class="fas fa-envelope"></i>
         <p>Email: {{ email1 }}</p>
       </div>
-      <div class="info-item">
+      <div class="info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
         <i class="fas fa-phone"></i>
         <p>Phone: {{ phoneNumber }}</p>
       </div>
     </div>
 
-    <form @submit.prevent="handleSubmit" class="contact-form">
+    <form @submit.prevent="handleSubmit" class="contact-form" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="name" placeholder="Your Name" required />
       <span v-if="errors.name" class="error">{{ errors.name }}</span>
@@ -35,12 +35,12 @@
 
     <div v-if="showAlert" :class="{'alert': true, 'success': alertMessage === successMessage, 'error': alertMessage === errorMessage}">
       {{ alertMessage }}
-      <button @click="showAlert = false">OK</button>
+      <button @click="showAlert = false" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">OK</button>
     </div>
 
-    <div class="cv-button">
+    <div class="cv-button" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
   <a href="https://drive.google.com/file/d/1OprEJQERh7GrjafVix3pSxDo5Av-HXkq/view?usp=sharing" target="_blank">
-    <button>
+    <button data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <span>View My CV</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ export default {
 .info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .info-item i {
@@ -199,6 +199,19 @@ button > svg {
 
 button:active {
   transform: scale(0.95);
+}
+
+.cv-button {
+  display: flex;
+  justify-content: center; 
+}
+
+.cv-button :hover {
+  transition: all 0.2s;
+}
+
+.cv-button a {
+  text-decoration: none;
 }
 
 .alert {

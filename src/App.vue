@@ -63,7 +63,6 @@ export default {
   background: #555555; 
 }
 
-/* For Firefox */
 * {
   scrollbar-width: thin; 
   scrollbar-color: #000000 #ffffff; 

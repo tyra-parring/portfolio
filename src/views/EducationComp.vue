@@ -3,15 +3,13 @@
     <h1>Education</h1>
     <ul>
       <li v-for="(education, index) in educations" :key="index">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-duration="600" :data-aos-delay="100">
           <div class="card-inner">
             <div class="card-front" :style="{ backgroundImage: `url(${education.image})` }">
               <div class="image-overlay"></div>
               <h2>{{ education.institution }}</h2>
             </div>
             <div class="card-back">
-              <!-- <p>{{ education.yearRange }}</p> -->
-              <!-- <p v-else>{{ education.year }}</p> -->
               <p>{{ education.description }}</p>
             </div>
           </div>
@@ -21,10 +19,10 @@
 
     <div class="certificates-section">
       <h2>Badges</h2>
-      <div class="badges-container">
-        <div v-for="(badge, index) in badges" :key="index" class="badge">
+      <div class="badges-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <div v-for="(badge, index) in badges" :key="index" class="badge" data-aos="fade-up" data-aos-duration="600" :data-aos-delay="200">
           <img :src="badge.image" alt="Badge" />
-          <h3>{{ badge.title }}</h3> <!-- Display badge title if needed -->
+          <h3>{{ badge.title }}</h3>
         </div>
       </div>
     </div>
@@ -37,11 +35,12 @@
       </div>
     </div>
   </div>
-
-
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default {
   data() {
     return {
@@ -74,11 +73,24 @@ export default {
           title: "Operating Systems Badge",
           image: "https://tyra-parring.github.io/homehost-/operatingsystems.png"
         },
-        // Add more certificates as needed
+        {
+          title: "UI/UX Principals Badge",
+          image: "https://tyra-parring.github.io/homehost-/UIUX.png"
+        },
+        {
+          title: "SCRUM Principles Badge",
+          image: "https://tyra-parring.github.io/homehost-/SCRUM.png"
+        },
+        
       ],
       isModalOpen: false,
       selectedCertificate: {}
     };
+  },
+  mounted() {
+    AOS.init({
+      duration: 600, // Global duration for all animations
+    });
   },
   methods: {
     openModal(certificate) {
@@ -204,7 +216,7 @@ li {
 }
 
 .badge img {
-  width: 150px; /* Adjust size as needed */
+  width: 150px;
   height: auto;
 }
 

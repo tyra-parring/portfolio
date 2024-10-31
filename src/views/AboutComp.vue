@@ -1,6 +1,6 @@
 <template>
   <div class="about-container" :class="{ 'animate__animated animate__fadeInUp': isVisible }">
-    <div class="intro-section">
+    <div class="intro-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <div class="profile-pic">
         <img src="https://tyra-parring.github.io/homehost-/InShot_20240424_205858533.jpg" alt="Tyra Parring Professional Picture" />
       </div>
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="skills-section">
+    <div class="skills-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <h2>Technical Skills</h2>
       <div class="skills-icons">
         <i class="devicon-html5-plain colored" title="HTML"></i>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="soft-skills-section">
+    <div class="soft-skills-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <h2>Soft Skills</h2>
       <div class="soft-skills">
         <div class="soft-skill-item">
@@ -58,18 +58,18 @@
       </div>
     </div>
 
-    <div class="hobbies-section">
+    <div class="hobbies-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
   <h2>Interests & Hobbies</h2>
-  <p>
+  <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
     Beyond coding, I'm a curious soul who loves to explore the latest tech trends, from AI and machine learning to cybersecurity and data science. I'm always on the lookout for new tools and technologies to add to my skillset.
   </p>
-  <p>
+  <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
     When I'm not coding, you can find me indulging in creative writing, whether it's writing short stories, poetry, or even scripting for video games. I find that writing helps me to express myself in a different way and tap into my imagination.
   </p>
-  <p>
+  <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
     But it's not all about tech and creativity - I'm also an outdoor enthusiast who loves spending time in nature. Whether it's going for a hike, playing sports, or simply taking a walk around the block, I believe that being outdoors is essential for both physical and mental well-being.
   </p>
-  <p>
+  <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
     And finally, I'm a proud cat mom who loves spending time with my playful and mischievous feline friend. From cuddling on the couch to playing with toys, I adore the companionship and joy that my cat brings to my life.
   </p>
 </div>
@@ -77,21 +77,25 @@
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default {
   data() {
     return {
-      isVisible: false, 
+      isVisible: false,
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll); 
+    AOS.init(); 
+    window.addEventListener('scroll', this.handleScroll);
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll); 
+    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {
-      const aboutSection = this.$el; 
+      const aboutSection = this.$el;
       const scrollPosition = window.scrollY + window.innerHeight;
       if (scrollPosition > aboutSection.offsetTop + aboutSection.clientHeight / 2) {
         this.isVisible = true;

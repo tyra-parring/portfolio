@@ -1,17 +1,24 @@
 <template>
   <div class="home-page">
     <div class="content">
-      <div class="typewriter-container">
+      <div class="typewriter-container" data-aos="fade-up" data-aos-delay="560">
         <div class="typewriter" id="typewriter"></div>
       </div>
-      <p class="subtitle">As an aspiring web developer, I'm passionate about crafting innovative digital solutions that bring ideas to life. With a strong foundation in HTML, CSS, and JavaScript, I'm constantly learning and exploring new technologies to stay ahead of the curve. Take a look at my projects and let's connect!</p>
+      <p class="subtitle" data-aos="fade-up" data-aos-delay="600">
+        As an aspiring web developer, I'm passionate about crafting innovative digital solutions that bring ideas to life. With a strong foundation in HTML, CSS, and JavaScript, I'm constantly learning and exploring new technologies to stay ahead of the curve. Take a look at my projects and let's connect!
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default {
   mounted() {
+    AOS.init();
+    
     const typewriter = document.getElementById('typewriter');
     const text = 'Welcome to my Portfolio';
     let index = 0;
