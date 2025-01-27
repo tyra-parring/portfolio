@@ -39,7 +39,7 @@
     </div>
 
     <div class="cv-button" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-  <a href="https://drive.google.com/file/d/1OprEJQERh7GrjafVix3pSxDo5Av-HXkq/view?usp=sharing" target="_blank">
+  <a href="https://www.canva.com/design/DAGTJ0th1Pk/6GUri2eDE75QOVhdVNzekQ/edit?utm_content=DAGTJ0th1Pk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
     <button data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <span>View My CV</span>
       <svg

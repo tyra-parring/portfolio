@@ -25,6 +25,8 @@
         <i class="devicon-mysql-plain colored" title="MySQL"></i>
         <i class="devicon-git-plain colored" title="Git"></i>
         <i class="devicon-bootstrap-plain colored" title="Bootstrap"></i>
+        <i class="devicon-python-plain colored" title="Python"></i>
+        <i class="devicon-linux-plain colored" title="Linux"></i>
       </div>
     </div>
 
