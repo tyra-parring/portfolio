@@ -177,13 +177,14 @@ button {
   font-weight: 700;
   transition: all 0.2s;
   padding: 10px 20px;
-  /* border-radius: 100px; */
   background: #9CA986;
   border: 1px solid transparent;
   display: flex;
   align-items: center;
   font-size: 15px;
   margin-top: 0.6em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 button:hover {
