@@ -222,6 +222,7 @@ export default {
   justify-content: space-between;
   margin-top: 10px;
   gap: 10px; 
+  flex-wrap: wrap;
 }
 
 .button {
