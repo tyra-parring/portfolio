@@ -117,7 +117,7 @@ export default {
   margin-bottom: 60px;
 }
 
-@keyframes slideIn {
+/* @keyframes slideIn {
   0% {
     transform: translateX(100%);
     opacity: 0;
@@ -126,7 +126,7 @@ export default {
     transform: translateX(0);
     opacity: 1;
   }
-}
+} */
 
 .projects-view {
   position: relative;
@@ -249,7 +249,7 @@ export default {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 375px) {
   .button-container {
     flex-direction: column;
   }
